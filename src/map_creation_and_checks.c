@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:10:23 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/17 11:12:23 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/08/18 11:05:11 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ void ft_map_creation(char *av, t_game *map)
 
     map->map = ft_split(array_1, '\n');
 	map->map_copy = ft_split(array_1, '\n');
+	//METER UN CLOSE
     free(array_1);
-    // ESTO AUN NO SE SI FUNCIONA O NO
+    close(map_fd); //esto va por detras, sino se queda el fd abierto
 }
 
 int ft_check_valid_chars(t_game *map)
@@ -70,6 +71,7 @@ void	ft_count_elements(t_game *map)
 	map->player = 0;
     map->coin = 0;
     map->exit = 0;
+	map->movements = 0; //añadido con claudia
     
 	while (map->map[y])
 	{
@@ -108,25 +110,20 @@ void ft_check_map_length(t_game *map)
 		map->y_max++;
 		y++;
 	}
-    //printf("El mapa es de %d por %d\n", map->x_max , map->y_max);
-}
-
-void ft_check_walls(t_game *map) //aqui hay que meterle una funcion para ver si es rectangular¿?
-{
-	int	x;
-	int	y;
-	y = 0;
-	while (y < map->y_max)
+	if (map->x_max == map->y_max)
+		ft_error_msg("ERROR: Mapa rectangular\n");
+	
+	//ESTO ES LO QUE ME DIJO CLAUDIA PARA CHEQUEAR QUE TODAS LAS LINEAS DEL MAPA TENGAN EL MISMO LEN
+	// checkearlo bien que esto da fallos y segfault 11
+	/*x = 0;
+	while (map->map[x])
 	{
-		x = 0;
-		while (x < map->x_max)
+		if (map->x_max != ft_strlen(map->map[x]))
 		{
-			if (map->map[0][x] != '1' || map->map[map->y_max - 1][x] != '1'
-			|| map->map[y][0] != '1' || map->map[y][map->x_max - 1] != '1')
-				ft_error_msg("Borders aren't correct\n");
-			x++;
+			printf("%lu el len\n %lu x_max", ft_strlen(map->map[x]), map->x_max);
+			ft_error_msg("Lineas de diferente len\n");
 		}
-		y++;
-	}
-
+		x++;
+	}*/
+    //printf("El mapa es de %d por %d\n", map->x_max , map->y_max);
 }
