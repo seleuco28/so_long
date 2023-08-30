@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 13:44:16 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/30 11:42:14 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/08/30 12:57:51 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void move_right(t_game *map)
 
 int key_hook(int keycode, t_game *map)
 {
-    if (keycode == 53)
+    if (keycode == ESCAPE)
         ft_exit_game(map);
     if (map->coin == 0
 		&& ((keycode == M_RIGHT && map->map[map->player_y][map->player_x + 1] == 'E')
@@ -70,7 +70,7 @@ int key_hook(int keycode, t_game *map)
 		|| (keycode == M_LEFT && map->map[map->player_y][map->player_x - 1] == 'E')
 		|| (keycode == M_UP && map->map[map->player_y - 1][map->player_x] == 'E')))
 	{
-		printf("\n%s", "You Win!!!");
+		printf("\n%s", "You Win!!!\n");
 		ft_exit_game(map);
 	}
     if (keycode == M_UP && map->map[map->player_y - 1][map->player_x] != '1'

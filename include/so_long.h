@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:20:15 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/30 10:59:11 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/08/30 12:18:07 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,9 @@ typedef struct s_game
 enum e_keycode
 {
     M_UP = 13,
-    A_UP = 126,
     M_DOWN = 1,
-    A_DOWN = 125,
     M_RIGHT = 2,
-    A_RIGHT = 124,
     M_LEFT = 0,
-    A_LEFT = 123,
-    MOUSE_UP = 5,
-    MOUSE_DOWN = 4,
-    MOUSE_MOVE = 6,
-    EXPOSE = 12,
-    DESTROY = 17,
-    KEY_RESET = 15,
     ESCAPE = 53,
 };
 
