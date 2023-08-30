@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:09:27 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/18 14:12:05 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/08/30 09:50:13 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ void draw_map(t_game *map)
                 ft_draw(map, "./sprites/Player.xpm", x , y);
             x++;
         }
-
-
         y++;
     }
 

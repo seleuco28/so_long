@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:20:15 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/18 13:48:57 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/08/30 10:59:11 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void    ft_free_map_principal(t_game *map);
 
 ///////////////////////////FUNCIONES MLX///////////////////////////
 
+void draw_map(t_game *map);
 int ft_exit_game(t_game *map);
 int key_hook(int keycode, t_game *map);
 
