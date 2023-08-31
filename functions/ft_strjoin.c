@@ -6,12 +6,11 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:38:23 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/01 17:38:37 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/08/30 18:49:58 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-
 
 char	*ft_strjoin(char *s1, char *s2)
 {

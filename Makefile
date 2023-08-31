@@ -6,7 +6,7 @@
 #    By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/01 13:47:33 by alvelazq          #+#    #+#              #
-#    Updated: 2023/08/30 09:47:11 by alvelazq         ###   ########.fr        #
+#    Updated: 2023/08/31 16:59:45 by alvelazq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ FUNCTIONS_DIR = functions/
 FUNCTIONS 			=	$(addprefix $(FUNCTIONS_DIR), $(FUNCTIONS_SOURCES))
 FUNCTIONS_OBJ		=	$(FUNCTIONS:.c=.o)
 
-SRC_SOURCES			= main.c utils.c map_creation_and_checks.c check_path.c exit_game.c moves_and_key_detection.c
+SRC_SOURCES			= main.c utils.c map_creation_and_checks.c check_path.c exit_game.c moves.c key_detection.c counts.c
 SRC_DIR				= src/
 SRC					= $(addprefix $(SRC_DIR), $(SRC_SOURCES))
 SRC_OBJ				= $(SRC:.c=.o)

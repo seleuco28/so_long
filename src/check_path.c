@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 17:13:49 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/18 11:36:13 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/08/30 18:51:07 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,15 @@ void	ft_path_free_and_error_copy(t_game *map)
 		i++;
 	}
 	free(map->map_copy);
-	if (map->coin_copy != 0 || map->exit != 1) //aqui tengo problemas con el coin_copy
-		//printf("El valor del coin copy es: %d\n", map->coin_copy);
+	if (map->coin_copy != 0 || map->exit != 1)
 		ft_error_msg("Error\nThere is no valid path!\n");
 }
 
-void ft_free_map_principal(t_game *map)
+void	ft_free_map_principal(t_game *map)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (map->map[i])
 	{
 		free(map->map[i]);

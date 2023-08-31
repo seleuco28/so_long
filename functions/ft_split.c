@@ -6,15 +6,13 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:10:19 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/01 17:13:52 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/08/30 18:47:41 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-//este es el split que quiero, el mio de la libft da leaks
-
-static	char	**ft_error_split(char **tab) //indagar/comentar en el split (y ver si libera el puntero del puntero)
+static	char	**ft_error_split(char **tab)
 {
 	int	i;
 
@@ -59,7 +57,7 @@ int	word_length(char const *s, char c)
 	return (len);
 }
 
-char	**function_double_pointer(char const *s, char c, char **result, int words_count)
+char	**f_double_pointer(char const *s, char c, char **r, int wc)
 {
 	int	i;
 	int	j;
@@ -68,24 +66,24 @@ char	**function_double_pointer(char const *s, char c, char **result, int words_c
 	while (*s == c)
 		s++;
 	i = -1;
-	while (++i < words_count)
+	while (++i < wc)
 	{
 		while (*s == c)
 			s++;
 		j = 0;
 		w_len = word_length(s, c);
-		result[i] = (char *)malloc(sizeof(char) * (w_len + 1));
-		if (!(result[i]))
-			return (ft_error_split(result));
+		r[i] = (char *)malloc(sizeof(char) * (w_len + 1));
+		if (!(r[i]))
+			return (ft_error_split(r));
 		while (j < w_len)
 		{
-			result[i][j] = *s;
+			r[i][j] = *s;
 			s++;
 			j++;
 		}
-		result[i][j] = '\0';
+		r[i][j] = '\0';
 	}
-	return (result);
+	return (r);
 }
 
 char	**ft_split(char const *s, char c)
@@ -99,7 +97,7 @@ char	**ft_split(char const *s, char c)
 	result = (char **)malloc(sizeof(char *) * (wcount + 1));
 	if (!(result))
 		return (ft_error_split(result));
-	result = function_double_pointer(s, c, result, wcount);
+	result = f_double_pointer(s, c, result, wcount);
 	result[wcount] = NULL;
 	return (result);
 }
