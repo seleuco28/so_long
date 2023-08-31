@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:10:23 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/31 16:59:23 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:14:38 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	ft_check_map_length(t_game *map)
 	while (map->map[x])
 	{
 		if (map->x_max != ft_strlen(map->map[x]))
-			ft_error_msg("Lineas de diferente len, mapa no rectangular\n");
+			ft_error_msg("The map is not rectangular\n");
 		x++;
 	}
 }

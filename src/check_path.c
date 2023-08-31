@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 17:13:49 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/30 18:51:07 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/08/31 19:07:03 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	limit_map(t_game *map, int y, int x)
 {
-	if ((y <= 0) || (y >= (int)map->y_max)
+	if ((y <= 0) || (y >= ((int)map->y_max) - 1)
 		|| (x <= 0) || (x >= (int)map->x_max))
 		ft_error_msg("Error\nThe map is not close!\n");
 }
@@ -37,7 +37,6 @@ void	ft_check_path(t_game *map, int y, int x)
 		(limit_map(map, y + 1, x), ft_check_path(map, y + 1, x));
 }
 
-// Frees all the copy of the map and checks all the coins have been collected
 void	ft_path_free_and_error_copy(t_game *map)
 {
 	int	i;
