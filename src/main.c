@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:09:27 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/01 15:50:50 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 15:55:37 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,16 @@ void	draw_map(t_game *map)
 	}
 }
 
+void	leaks(void)
+{
+	system("leaks so_long");
+	//atexit(leaks);
+}
+
 int	main(int ac, char **av)
 {
 	t_game	map;
+	atexit(leaks);
 	//system("leaks so_long");
 	ft_check_args(ac, av[1]);
 	ft_map_creation(av[1], &map);

@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 13:44:16 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/01 15:34:20 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 15:58:15 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	move_up(t_game *map)
 	text = ft_itoa(map->movements);
 	write(1, text, sizeof(text));
 	write(1, "\n", 1);
+	free(text);
 	draw_map(map);
 }
 
@@ -41,6 +42,7 @@ void	move_down(t_game *map)
 	text = ft_itoa(map->movements);
 	write(1, text, sizeof(text));
 	write(1, "\n", 1);
+	free(text);
 	draw_map(map);
 }
 
@@ -57,6 +59,7 @@ void	move_left(t_game *map)
 	text = ft_itoa(map->movements);
 	write(1, text, sizeof(text));
 	write(1, "\n", 1);
+	free(text);
 	draw_map(map);
 }
 
@@ -73,5 +76,6 @@ void	move_right(t_game *map)
 	text = ft_itoa(map->movements);
 	write(1, text, sizeof(text));
 	write(1, "\n", 1);
+	free(text);
 	draw_map(map);
 }
