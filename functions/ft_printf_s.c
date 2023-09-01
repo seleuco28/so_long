@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_printf_c.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/01 13:06:22 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/01 12:02:22 by alvelazq         ###   ########.fr       */
+/*   Created: 2022/04/21 15:13:16 by alvarovelaz       #+#    #+#             */
+/*   Updated: 2022/05/10 11:09:44 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "ft_printf.h"
 
-int	ft_error_msg(char *message)
+int	ft_putstr(char *s)
 {
-	ft_printf("%s", message);
-	exit(0);
-}
+	int	c;
 
-void	ft_check_args(int ac, char *av)
-{
-	int	len;
-
-	if (ac != 2)
-		ft_error_msg("Invalid number of arguments\n");
-	else
+	c = 0;
+	if (!s)
 	{
-		len = ft_strlen(av);
-		if (ft_strncmp(av + (len - 4), ".ber", 4))
-			ft_error_msg("Invalid archive type, you need a '.ber'\n");
+		return (write(1, "(null)", 6));
 	}
+	while (s[c] != '\0')
+	{
+		ft_putchar(s[c]);
+		c++;
+	}
+	return (c);
 }

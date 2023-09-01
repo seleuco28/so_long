@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:20:15 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/01 11:05:26 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:21:01 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <string.h>
+
 # include "../minilibx_opengl/mlx.h"
+# include "../functions/ft_printf.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
