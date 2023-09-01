@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:57:37 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/01 15:06:55 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 17:23:28 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_count_players(t_game *map)
 	}
 	if (map->player != 1)
 	{
-		ft_putstr("ERROR: Player missing or too much\n");
+		ft_putstr("ERROR: Missing or too much players.\n");
 		exit(0);
 	}
 }
@@ -86,7 +86,7 @@ void	ft_count_exit(t_game *map)
 	}
 	if (map->exit != 1)
 	{
-		ft_putstr("The exit is missing\n");
+		ft_putstr("The exit is missing or there is more than one.\n");
 		exit(0);
 	}
 	map->exit = 0;

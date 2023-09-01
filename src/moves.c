@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 13:44:16 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/01 15:58:15 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 17:17:54 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	move_up(t_game *map)
 	map->player_y = map->player_y - 1;
 	map->movements++;
 	text = ft_itoa(map->movements);
-	write(1, text, sizeof(text));
+	write(1, text, sizeof(text) - 1);
 	write(1, "\n", 1);
 	free(text);
 	draw_map(map);
@@ -40,7 +40,7 @@ void	move_down(t_game *map)
 	map->player_y = map->player_y + 1;
 	map->movements++;
 	text = ft_itoa(map->movements);
-	write(1, text, sizeof(text));
+	write(1, text, sizeof(text) - 1);
 	write(1, "\n", 1);
 	free(text);
 	draw_map(map);
@@ -57,7 +57,7 @@ void	move_left(t_game *map)
 	map->player_x = map->player_x - 1;
 	map->movements++;
 	text = ft_itoa(map->movements);
-	write(1, text, sizeof(text));
+	write(1, text, sizeof(text) - 1);
 	write(1, "\n", 1);
 	free(text);
 	draw_map(map);
@@ -74,7 +74,7 @@ void	move_right(t_game *map)
 	map->player_x = map->player_x + 1;
 	map->movements++;
 	text = ft_itoa(map->movements);
-	write(1, text, sizeof(text));
+	write(1, text, sizeof(text) - 1);
 	write(1, "\n", 1);
 	free(text);
 	draw_map(map);

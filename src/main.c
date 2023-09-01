@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:09:27 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/01 15:55:37 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 17:33:34 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,32 +29,25 @@ void	draw_map(t_game *map)
 		x = 0;
 		while (map->map[y][x])
 		{
-			ft_draw(map, "./sprites/floor.xpm", x, y);
+			ft_draw(map, "./sprites/Floor.xpm", x, y);
 			if (map->map[y][x] == '1')
-				ft_draw(map, "./sprites/wall.xpm", x, y);
+				ft_draw(map, "./sprites/Wall.xpm", x, y);
 			else if (map->map[y][x] == 'C')
-				ft_draw(map, "./sprites/food.xpm", x, y);
+				ft_draw(map, "./sprites/Food.xpm", x, y);
 			else if (map->map[y][x] == 'E')
-				ft_draw(map, "./sprites/exit.xpm", x, y);
+				ft_draw(map, "./sprites/Exit.xpm", x, y);
 			else if (map->map[y][x] == 'P')
-				ft_draw(map, "./sprites/player.xpm", x, y);
+				ft_draw(map, "./sprites/Player.xpm", x, y);
 			x++;
 		}
 		y++;
 	}
 }
 
-void	leaks(void)
-{
-	system("leaks so_long");
-	//atexit(leaks);
-}
-
 int	main(int ac, char **av)
 {
 	t_game	map;
-	atexit(leaks);
-	//system("leaks so_long");
+
 	ft_check_args(ac, av[1]);
 	ft_map_creation(av[1], &map);
 	ft_check_valid_chars(&map);

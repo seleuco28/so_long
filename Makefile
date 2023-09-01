@@ -6,7 +6,7 @@
 #    By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/01 13:47:33 by alvelazq          #+#    #+#              #
-#    Updated: 2023/09/01 15:26:34 by alvelazq         ###   ########.fr        #
+#    Updated: 2023/09/01 17:09:44 by alvelazq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,8 +36,7 @@ MINILIBX_OBJ		= $(MINILIBX: .c=.o)
 %.o: %.c $(HEADER) Makefile
 				@${CC} ${FLAGS} -c $< -o $@
 
-$(NAME):		$(FUNCTIONS_OBJ) $(SRC_OBJ) 
-				@make -C $(MLX_PATH) 
+$(NAME):		$(FUNCTIONS_OBJ) $(SRC_OBJ)
 				@$(CC) $(FUNCTIONS_OBJ) $(SRC_OBJ) $(MINILIBX) -o $(NAME)
 				@echo "$(NAME) creado!"
 
