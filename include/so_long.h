@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:20:15 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/01 12:21:01 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 15:40:58 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include <string.h>
 
 # include "../minilibx_opengl/mlx.h"
-# include "../functions/ft_printf.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -67,7 +66,8 @@ char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(const char *s, int c);
 char	*get_next_line(int fd);
 char	*ft_strdup(const char *s1);
-int		ft_printf(char const *str, ...);
+void	ft_putstr(char *str);
+char	*ft_itoa(int n);
 ///////////////////////////FUNCIONES PROPIAS///////////////////////////
 int		ft_error_msg(char *message);
 void	ft_check_args(int ac, char *av);
@@ -81,7 +81,7 @@ void	ft_free_map_principal(t_game *map);
 void	ft_count_coins(t_game *map);
 void	ft_count_players(t_game *map);
 void	ft_count_exit(t_game *map);
-void ft_auxiliar(t_game *map);
+void	ft_coin_exit_checker(t_game *map);
 
 ///////////////////////////FUNCIONES MLX///////////////////////////
 

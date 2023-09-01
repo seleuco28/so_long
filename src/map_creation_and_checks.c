@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:10:23 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/01 10:14:11 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 15:09:55 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ void	ft_map_creation(char *av, t_game *map)
 
 	map_fd = open(av, O_RDONLY);
 	if (!map_fd || map_fd == -1)
-		ft_error_msg("File descriptor not found");
+	{
+		ft_putstr("File descriptor not found");
+		exit(0);
+	}
 	array_1 = ft_strdup("");
 	while (1)
 	{
@@ -50,7 +53,10 @@ int	ft_check_valid_chars(t_game *map)
 		{
 			if (read[y][x] != '0' && read[y][x] != '1' &&
 				read[y][x] != 'C' && read[y][x] != 'P' && read[y][x] != 'E')
-				ft_error_msg("Unexpected char type\n");
+			{
+				ft_putstr("Unexpected char type\n");
+				exit(0);
+			}
 			x++;
 		}
 		y++;
@@ -76,7 +82,10 @@ void	ft_check_map_length(t_game *map)
 	while (map->map[x])
 	{
 		if (map->x_max != ft_strlen(map->map[x]))
-			ft_error_msg("The map is not rectangular\n");
+		{
+			ft_putstr("The map is not rectangular\n");
+			exit(0);
+		}
 		x++;
 	}
 }

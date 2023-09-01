@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 20:18:34 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/31 16:10:56 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 15:07:39 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_key_hook_aux(int keycode, t_game *map)
 		|| (keycode == M_UP
 				&& map->map[map->player_y - 1][map->player_x] == 'E')))
 	{
-		printf("%s", "You Win!!!\n");
+		ft_putstr("You Win!!!\n");
 		ft_exit_game(map);
 	}
 }

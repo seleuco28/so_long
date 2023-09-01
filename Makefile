@@ -6,19 +6,19 @@
 #    By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/01 13:47:33 by alvelazq          #+#    #+#              #
-#    Updated: 2023/09/01 12:22:15 by alvelazq         ###   ########.fr        #
+#    Updated: 2023/09/01 15:26:34 by alvelazq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -Imlx
+CFLAGS = -Wall -Werror -Wextra -Imlx 
 RM = rm -rf
 
 HEADER = so_long.h
 
 
-FUNCTIONS_SOURCES = ft_strlen.c ft_strncmp.c ft_split.c ft_strchr.c ft_strjoin.c get_next_line.c ft_strdup.c ft_printf.c
+FUNCTIONS_SOURCES = ft_strlen.c ft_strncmp.c ft_split.c ft_strchr.c ft_strjoin.c get_next_line.c ft_strdup.c ft_putstr.c ft_itoa.c
 FUNCTIONS_DIR = functions/
 FUNCTIONS 			=	$(addprefix $(FUNCTIONS_DIR), $(FUNCTIONS_SOURCES))
 FUNCTIONS_OBJ		=	$(FUNCTIONS:.c=.o)

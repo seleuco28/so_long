@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:09:27 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/01 10:42:06 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 15:50:50 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,10 @@ void	draw_map(t_game *map)
 	}
 }
 
-/*void	leaks(void)
-{
-	system("leaks so_long");
-	//atexit(leaks);
-}*/
-
 int	main(int ac, char **av)
 {
 	t_game	map;
-
-	//atexit(leaks);
 	//system("leaks so_long");
-
 	ft_check_args(ac, av[1]);
 	ft_map_creation(av[1], &map);
 	ft_check_valid_chars(&map);
@@ -65,10 +56,9 @@ int	main(int ac, char **av)
 	ft_count_exit(&map);
 	ft_check_map_length(&map);
 	ft_check_path(&map, map.player_y, map.player_x);
-	ft_auxiliar(&map);
+	ft_coin_exit_checker(&map);
 	ft_free_map_principal(&map);
 	ft_map_creation(av[1], &map);
-	// ft_path_free_and_error_copy(&map);
 	map.mlx = mlx_init();
 	map.win = mlx_new_window(map.mlx, (map.x_max) * 64,
 			(map.y_max) * 64, "so_long");
@@ -76,6 +66,5 @@ int	main(int ac, char **av)
 	mlx_hook(map.win, 17, 0, ft_exit_game, &map);
 	mlx_key_hook(map.win, key_hook, &map);
 	mlx_loop(map.mlx);
-
 	return (0);
 }

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_c.c                                      :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 15:13:16 by alvarovelaz       #+#    #+#             */
-/*   Updated: 2022/05/10 11:09:44 by alvelazq         ###   ########.fr       */
+/*   Created: 2023/09/01 15:24:08 by alvelazq          #+#    #+#             */
+/*   Updated: 2023/09/01 15:38:06 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/so_long.h"
 
-int	ft_putstr(char *s)
+void	ft_putstr(char *str)
 {
-	int	c;
+	int	i;
 
-	c = 0;
-	if (!s)
+	i = 0;
+	while (str[i])
 	{
-		return (write(1, "(null)", 6));
+		write(1, &str[i], 1);
+		i++;
 	}
-	while (s[c] != '\0')
-	{
-		ft_putchar(s[c]);
-		c++;
-	}
-	return (c);
 }
+/*
+int main()
+{
+    char *string = "hola buenas";
+    ft_putstr(string);
+    return 0;
+}*/

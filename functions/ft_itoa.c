@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_di.c                                     :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 16:10:02 by alvarovelaz       #+#    #+#             */
-/*   Updated: 2022/05/10 10:49:13 by alvelazq         ###   ########.fr       */
+/*   Created: 2022/03/29 12:52:37 by alvelazq          #+#    #+#             */
+/*   Updated: 2023/09/01 15:26:22 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/so_long.h"
 
 static	int	ft_len(int nbr)
 {
@@ -28,29 +28,36 @@ static	int	ft_len(int nbr)
 	return (leng);
 }
 
-int	ft_putnbr(int n)
+char	*ft_itoa(int n)
 {
-	int	len;
+	unsigned int	nbr;
+	int				len;
+	char			*str;
 
 	len = ft_len(n);
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-	}
+	str = malloc(sizeof(char) * len + 1);
+	if (n < 0)
+		nbr = -n;
 	else
+		nbr = n;
+	if (str == 0)
+		return (0);
+	str[len--] = '\0';
+	while (len >= 0)
 	{
-		if (n < 0)
-		{
-			ft_putchar('-');
-			n *= -1;
-		}
-		if (n < 10)
-			ft_putchar(n + '0');
-		else
-		{
-			ft_putnbr(n / 10);
-			ft_putchar(n % 10 + '0');
-		}
+		str[len] = nbr % 10 + '0';
+		nbr /= 10;
+		len--;
 	}
-	return (len);
+	if (n < 0)
+		str[0] = '-';
+	return (str);
 }
+
+/*
+int main(void)
+{
+    printf("%s\n", ft_itoa(-65));
+
+    return (0);
+}*/
