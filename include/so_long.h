@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:20:15 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/31 17:12:26 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 11:05:26 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ enum e_keycode
 };
 
 ///////////////////////////FUNCIONES GENERALES///////////////////////////
-//int	ft_printf(char const *str, ...);
+
 size_t	ft_strlen(char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	**ft_split(char const *s, char c);
@@ -65,7 +65,7 @@ char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(const char *s, int c);
 char	*get_next_line(int fd);
 char	*ft_strdup(const char *s1);
-
+int		ft_printf(char const *str, ...);
 ///////////////////////////FUNCIONES PROPIAS///////////////////////////
 int		ft_error_msg(char *message);
 void	ft_check_args(int ac, char *av);
@@ -79,6 +79,7 @@ void	ft_free_map_principal(t_game *map);
 void	ft_count_coins(t_game *map);
 void	ft_count_players(t_game *map);
 void	ft_count_exit(t_game *map);
+void ft_auxiliar(t_game *map);
 
 ///////////////////////////FUNCIONES MLX///////////////////////////
 

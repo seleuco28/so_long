@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:57:37 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/31 17:43:21 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 10:18:56 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,16 @@ void	ft_count_coins(t_game *map)
 	int	y;
 	int	x;
 
-	y = 0;
 	map->coin = 0;
-	while (map->map[y])
+	y = -1;
+	while (map->map[++y])
 	{
-		x = 0;
-		while (map->map[y][x])
+		x = -1;
+		while (map->map[y][++x])
 		{
 			if (map->map[y][x] == 'C')
 				map->coin++;
-			x++;
 		}
-		y++;
 	}
 	map->coin_copy = map->coin;
 	if (map->coin == 0)
@@ -82,4 +80,5 @@ void	ft_count_exit(t_game *map)
 	}
 	if (map->exit != 1)
 		ft_error_msg("The exit is missing\n");
+	map->exit = 0;
 }

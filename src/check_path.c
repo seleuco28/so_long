@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 17:13:49 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/31 19:07:03 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 10:26:17 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,44 +23,49 @@ void	ft_check_path(t_game *map, int y, int x)
 {
 	char	p;
 
-	p = map->map_copy[y][x];
+	p = map->map[y][x];
 	if (p == 'C')
 		map->coin_copy--;
-	map->map_copy[y][x] = '.';
-	if (map->map_copy[y][x + 1] != '1' && map->map_copy[y][x + 1] != '.')
+	else if (p == 'E')
+		map->exit++;
+	map->map[y][x] = '.';
+	if (map->map[y][x + 1] != '1' && map->map[y][x + 1] != '.')
 		(limit_map(map, y, x + 1), ft_check_path(map, y, x + 1));
-	if (map->map_copy[y][x - 1] != '1' && map->map_copy[y][x - 1] != '.')
+	if (map->map[y][x - 1] != '1' && map->map[y][x - 1] != '.')
 		(limit_map(map, y, x - 1), ft_check_path(map, y, x - 1));
-	if (map->map_copy[y - 1][x] != '1' && map->map_copy[y - 1][x] != '.')
+	if (map->map[y - 1][x] != '1' && map->map[y - 1][x] != '.')
 		(limit_map(map, y - 1, x), ft_check_path(map, y - 1, x));
-	if (map->map_copy[y + 1][x] != '1' && map->map_copy[y + 1][x] != '.')
+	if (map->map[y + 1][x] != '1' && map->map[y + 1][x] != '.')
 		(limit_map(map, y + 1, x), ft_check_path(map, y + 1, x));
+
 }
 
-void	ft_path_free_and_error_copy(t_game *map)
+void ft_auxiliar(t_game *map)
 {
-	int	i;
-
-	i = 0;
-	while (map->map_copy[i])
-	{
-		free(map->map_copy[i]);
-		i++;
-	}
-	free(map->map_copy);
 	if (map->coin_copy != 0 || map->exit != 1)
 		ft_error_msg("Error\nThere is no valid path!\n");
 }
+
+// void	ft_path_free_and_error_copy(t_game *map)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (map->map[i])
+// 	{
+// 		free(map->map[i]);
+// 		i++;
+// 	}
+// 	free(map->map);
+	
+// }
 
 void	ft_free_map_principal(t_game *map)
 {
 	int	i;
 
 	i = 0;
-	while (map->map[i])
-	{
-		free(map->map[i]);
-		i++;
-	}
+	while (map->map[i] != NULL)
+		free(map->map[i++]);
 	free(map->map);
 }

@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:10:23 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/31 18:14:38 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/01 10:14:11 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	ft_map_creation(char *av, t_game *map)
 		free(temp_line);
 	}
 	map->map = ft_split(array_1, '\n');
-	map->map_copy = ft_split(array_1, '\n');
 	free (array_1);
 	close (map_fd);
 }
