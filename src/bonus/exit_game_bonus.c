@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   exit_game_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/01 13:36:17 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/30 18:49:36 by alvelazq         ###   ########.fr       */
+/*   Created: 2023/08/18 13:35:15 by alvelazq          #+#    #+#             */
+/*   Updated: 2023/09/08 10:27:26 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long_bonus.h"
 
-size_t	ft_strlen(char *str)
+int	ft_exit_game(t_game *map)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	mlx_clear_window(map->mlx, map->win);
+	mlx_destroy_window(map->mlx, map->win);
+	ft_free_map_principal(map);
+	exit(0);
 }
-/*
-int main(void)
-{
-    char *str;
-    str = "abc";
-    printf("%zu\n", ft_strlen(str));
-    printf("%zu\n", strlen(str));
-    return(0);
-}
-*/

@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/01 13:36:17 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/08/30 18:49:36 by alvelazq         ###   ########.fr       */
+/*   Created: 2023/08/01 13:06:22 by alvelazq          #+#    #+#             */
+/*   Updated: 2023/09/08 10:28:12 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long_bonus.h"
 
-size_t	ft_strlen(char *str)
+void	ft_check_args(int ac, char *av)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	if (ac != 2)
+	{
+		ft_putstr("Invalid number of arguments\n");
+		exit(0);
+	}
+	else
+	{
+		len = ft_strlen(av);
+		if (ft_strncmp(av + (len - 4), ".ber", 4))
+		{
+			ft_putstr("Invalid archive type, you need a '.ber'\n");
+			exit(0);
+		}
+	}
 }
-/*
-int main(void)
-{
-    char *str;
-    str = "abc";
-    printf("%zu\n", ft_strlen(str));
-    printf("%zu\n", strlen(str));
-    return(0);
-}
-*/
