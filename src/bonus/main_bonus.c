@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:09:27 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/11 12:15:45 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:04:41 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,6 @@ void	ft_draw(t_game *map, char *path, int x, int y)
 {
 	map->img = mlx_xpm_file_to_image(map->mlx, path, &map->img_w, &map->img_h);
 	mlx_put_image_to_window(map->mlx, map->win, map->img, (x * 64), (y * 64));
-}
-
-void	draw_numbers(t_game *map)
-{
-	char	*text;
-
-	text = ft_itoa(map->movements);
-	mlx_string_put(map->mlx, map->win, 32, 32, BLACK, text);
-	free(text);
 }
 
 void	draw_map_2(t_game *map)

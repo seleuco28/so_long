@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:20:15 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/11 10:51:45 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:57:48 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,9 @@ void	ft_count_players(t_game *map);
 void	ft_count_exit(t_game *map);
 void	ft_coin_exit_checker(t_game *map);
 void	ft_count_enemies(t_game *map);
+void	draw_numbers(t_game *map);
 
 ///////////////////////////FUNCIONES MLX///////////////////////////
-
 void	draw_map(t_game *map);
 int		ft_exit_game(t_game *map);
 int		key_hook(int keycode, t_game *map);

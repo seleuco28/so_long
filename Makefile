@@ -6,11 +6,18 @@
 #    By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/01 13:47:33 by alvelazq          #+#    #+#              #
-#    Updated: 2023/09/11 12:40:47 by alvelazq         ###   ########.fr        #
+#    Updated: 2023/09/11 14:12:16 by alvelazq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
+NAME_BONUS = so_long_bonus
+
+#INC_DIR = ./include
+
+#SRC_SL = src/main.c
+#SRC_B	= src/bonus/main_bonus.c
+
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -Imlx 
 RM = rm -rf
@@ -42,18 +49,17 @@ MINILIBX_OBJ		= $(MINILIBX: .c=.o)
 				@${CC} ${FLAGS} -c $< -o $@
 
 
-$(NAME):		$(FUNCTIONS_OBJ) $(SRC_OBJ)
+$(NAME):		$(SRC_OBJ) $(FUNCTIONS_OBJ) 
 				@$(CC) $(FUNCTIONS_OBJ) $(SRC_OBJ) $(MINILIBX) -o $(NAME)
 				@echo "$(NAME) creado!"
 
-$(NAME_BONUS): $(FUNCTIONS_OBJ) $(SRC_OBJ_BONUS)
+$(NAME_BONUS): 	$(SRC_OBJ_BONUS) $(FUNCTIONS_OBJ)
 				@$(CC) $(FUNCTIONS_OBJ) $(SRC_OBJ_BONUS) $(MINILIBX) -o $(NAME_BONUS)
 				@echo "$(NAME_BONUS) creado!"
 
 all:		$(NAME)			
 
 bonus : $(NAME_BONUS)
-		@echo "bonus NO tira?"
 
 clean:
 				@$(RM) $(FUNCTIONS_OBJ)
