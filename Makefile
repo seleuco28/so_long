@@ -6,7 +6,7 @@
 #    By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/01 13:47:33 by alvelazq          #+#    #+#              #
-#    Updated: 2023/09/08 11:56:48 by alvelazq         ###   ########.fr        #
+#    Updated: 2023/09/11 12:40:47 by alvelazq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,8 +42,8 @@ MINILIBX_OBJ		= $(MINILIBX: .c=.o)
 				@${CC} ${FLAGS} -c $< -o $@
 
 
-$(NAME):		$(FUNCTIONS_OBJ) $(SRC_OBJ_BONUS)
-				@$(CC) $(FUNCTIONS_OBJ) $(SRC_OBJ_BONUS) $(MINILIBX) -o $(NAME)
+$(NAME):		$(FUNCTIONS_OBJ) $(SRC_OBJ)
+				@$(CC) $(FUNCTIONS_OBJ) $(SRC_OBJ) $(MINILIBX) -o $(NAME)
 				@echo "$(NAME) creado!"
 
 $(NAME_BONUS): $(FUNCTIONS_OBJ) $(SRC_OBJ_BONUS)

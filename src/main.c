@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:09:27 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/01 17:33:34 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/11 12:42:07 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	draw_map(t_game *map)
 			else if (map->map[y][x] == 'E')
 				ft_draw(map, "./sprites/Exit.xpm", x, y);
 			else if (map->map[y][x] == 'P')
-				ft_draw(map, "./sprites/Player.xpm", x, y);
+				ft_draw(map, "./sprites/player_1.xpm", x, y);
 			x++;
 		}
 		y++;
