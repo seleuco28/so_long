@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:09:27 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/11 11:10:18 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/11 12:15:45 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,38 @@ void	ft_draw(t_game *map, char *path, int x, int y)
 	mlx_put_image_to_window(map->mlx, map->win, map->img, (x * 64), (y * 64));
 }
 
-void draw_numbers(t_game *map)
+void	draw_numbers(t_game *map)
 {
-	char *text;
+	char	*text;
 
 	text = ft_itoa(map->movements);
-	mlx_string_put(map->mlx, map->win, 32 , 32 , BLACK , text);
+	mlx_string_put(map->mlx, map->win, 32, 32, BLACK, text);
 	free(text);
+}
+
+void	draw_map_2(t_game *map)
+{
+	int	y;
+	int	x;
+
+	y = 0;
+	while (map->map[y])
+	{
+		x = 0;
+		while (map->map[y][x])
+		{
+			if (map->map[y][x] == 'P' && ((map->movements % 2) == 0))
+				ft_draw(map, "./sprites/player_1.xpm", x, y);
+			else if (map->map[y][x] == 'P' && ((map->movements % 2) != 0))
+				ft_draw(map, "./sprites/player_2.xpm", x, y);
+			else if (map->map[y][x] == 'Q' && ((map->movements % 2) == 0))
+				ft_draw(map, "./sprites/enemy_1.xpm", x, y);
+			else if (map->map[y][x] == 'Q' && ((map->movements % 2) != 0))
+				ft_draw(map, "./sprites/enemy_2.xpm", x, y);
+			x++;
+		}
+		y++;
+	}
 }
 
 void	draw_map(t_game *map)
@@ -46,14 +71,7 @@ void	draw_map(t_game *map)
 				ft_draw(map, "./sprites/Food.xpm", x, y);
 			else if (map->map[y][x] == 'E')
 				ft_draw(map, "./sprites/Exit.xpm", x, y);
-			else if (map->map[y][x] == 'P' && ((map->movements % 2) == 0)) //aqui puedo hacer funcion para quitarme lineas
-				ft_draw(map, "./sprites/player_1.xpm", x, y);
-			else if (map->map[y][x] == 'P' && ((map->movements % 2) != 0))
-				ft_draw(map, "./sprites/player_2.xpm", x, y);
-			else if (map->map[y][x] == 'Q' && ((map->movements % 2) == 0)) //y aqui igual
-				ft_draw(map, "./sprites/enemy_1.xpm", x, y);
-			else if (map->map[y][x] == 'Q' && ((map->movements % 2) != 0))
-				ft_draw(map, "./sprites/enemy_2.xpm", x, y);
+			draw_map_2(map);
 			x++;
 		}
 		y++;

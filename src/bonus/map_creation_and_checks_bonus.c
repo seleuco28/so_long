@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:10:23 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/08 12:22:51 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/11 12:07:49 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ int	ft_check_valid_chars(t_game *map)
 		while (read[y][x])
 		{
 			if (read[y][x] != '0' && read[y][x] != '1' &&
-				read[y][x] != 'C' && read[y][x] != 'P' && read[y][x] != 'E' && read[y][x] != 'Q') //esto tambien tocado para char type
+				read[y][x] != 'C' && read[y][x] != 'P'
+					&& read[y][x] != 'E' && read[y][x] != 'Q')
 			{
 				ft_putstr("Unexpected char type\n");
 				exit(0);

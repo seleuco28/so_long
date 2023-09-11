@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:57:37 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/08 12:13:05 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/09/11 12:03:33 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void	ft_count_enemies(t_game *map)
 	}
 	if (map->enemy != 1)
 	{
-		ft_putstr("ERROR: In the bonus part, there must be at least one enemy.\n");
+		ft_putstr("ERROR: There must be at least one enemy.\n");
 		exit(0);
 	}
 }
