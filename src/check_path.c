@@ -6,13 +6,13 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 17:13:49 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/01 15:42:02 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/10/13 19:43:33 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
-void	limit_map(t_game *map, int y, int x)
+void	limit_map(t_game *map, int y, int x) //si las coordenadas son capaces de salirse del mapa, no esta cerrado (rodeado de unos)
 {
 	if ((y <= 0) || (y >= ((int)map->y_max) - 1)
 		|| (x <= 0) || (x >= (int)map->x_max))
@@ -44,9 +44,9 @@ void	ft_check_path(t_game *map, int y, int x)
 
 void	ft_coin_exit_checker(t_game *map)
 {
-	if (map->coin_copy != 0 || map->exit != 1)
+	if (map->coin_copy != 0 || map->exit != 1) //si se ha quedado alguna moneda, o no has podido llegar a la salida
 	{
-		ft_putstr("Error\nThere is no valid path!\n");
+		ft_putstr("Error: There is no valid path!\n");
 		exit(0);
 	}
 }

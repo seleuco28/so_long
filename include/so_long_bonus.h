@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:20:15 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/11 13:57:48 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/10/13 19:24:08 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_game
 	char			**map_copy;
 	unsigned long	y_max;
 	unsigned long	x_max;
-	int				player;
+	int				player_num;
 	int				player_x;
 	int				player_y;
 	int				coin;
@@ -82,7 +82,7 @@ int		ft_error_msg(char *message);
 void	ft_check_args(int ac, char *av);
 void	ft_map_creation(char *av, t_game *map);
 int		ft_check_valid_chars(t_game *map);
-void	ft_check_map_length(t_game *map);
+void	ft_check_if_rect(t_game *map);
 void	ft_check_path(t_game *map, int y, int x);
 void	ft_path_free_and_error_copy(t_game *map);
 void	ft_free_map_principal(t_game *map);

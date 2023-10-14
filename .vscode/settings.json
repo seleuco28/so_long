@@ -68,5 +68,6 @@
   "terminal.integrated.defaultProfile.osx": "x86 bash",
   "files.associations": {
     "so_long.h": "c"
-  }
+  },
+  "C_Cpp_Runner.msvcSecureNoWarnings": false
 }

@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:09:27 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/11 13:04:41 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/10/14 10:54:00 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	main(int ac, char **av)
 	ft_count_coins(&map);
 	ft_count_players(&map);
 	ft_count_exit(&map);
-	ft_check_map_length(&map);
+	ft_check_if_rect(&map);
 	ft_check_path(&map, map.player_y, map.player_x);
 	ft_coin_exit_checker(&map);
 	ft_free_map_principal(&map);
@@ -88,7 +88,7 @@ int	main(int ac, char **av)
 	map.win = mlx_new_window(map.mlx, (map.x_max) * 64,
 			(map.y_max) * 64, "so_long");
 	draw_map(&map);
-	mlx_hook(map.win, 17, 0, ft_exit_game, &map);
+	//mlx_hook(map.win, 17, 0, ft_exit_game, &map); //no hace falta porque ya esta metido en la siguiente funcion
 	mlx_key_hook(map.win, key_hook, &map);
 	mlx_loop(map.mlx);
 	return (0);

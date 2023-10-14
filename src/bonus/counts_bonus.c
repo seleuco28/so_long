@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:57:37 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/11 12:03:33 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/10/13 19:05:36 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_count_players(t_game *map)
 	int	x;
 
 	y = 0;
-	map->player = 0;
+	map->player_num = 0;
 	while (map->map[y])
 	{
 		x = 0;
@@ -26,7 +26,7 @@ void	ft_count_players(t_game *map)
 		{
 			if (map->map[y][x] == 'P')
 			{
-				map->player++;
+				map->player_num++;
 				map->player_y = y;
 				map->player_x = x;
 			}
@@ -34,7 +34,7 @@ void	ft_count_players(t_game *map)
 		}
 		y++;
 	}
-	if (map->player != 1)
+	if (map->player_num != 1)
 	{
 		ft_putstr("ERROR: Missing or too much players.\n");
 		exit(0);

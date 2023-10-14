@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:10:23 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/09/11 12:07:49 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/10/13 19:23:58 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	ft_check_valid_chars(t_game *map)
 	return (1);
 }
 
-void	ft_check_map_length(t_game *map)
+void	ft_check_if_rect(t_game *map)
 {
 	int	x;
 	int	y;
