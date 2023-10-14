@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 18:10:23 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/10/13 19:21:45 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/10/14 12:28:27 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ void	ft_map_creation(char *av, t_game *map)
 		ft_putstr("File descriptor not found");
 		exit(0);
 	}
-	array_1 = ft_strdup(""); //para guardar una copia del string (vacia y ahora la llenamos)
+	array_1 = ft_strdup("");
 	while (1)
 	{
-		temp_line = get_next_line(map_fd); // fd porque el GNL pide de argumento un fd
-		if (temp_line == NULL) // cuando GNL acaba retorna null y entonces el programa para
+		temp_line = get_next_line(map_fd);
+		if (temp_line == NULL)
 			break ;
-		array_1 = ft_strjoin(array_1, temp_line); // haces join de la linea actual al array fijo
+		array_1 = ft_strjoin(array_1, temp_line);
 		free(temp_line);
 	}
-	map->map = ft_split(array_1, '\n'); // y lo spliteas para que sea un cuadrado
-	free (array_1); // liberas array_1 porque haces malloc en (Strjoin O en Split)?
+	map->map = ft_split(array_1, '\n');
+	free (array_1);
 	close (map_fd);
 }
 

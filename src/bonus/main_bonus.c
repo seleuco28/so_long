@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:09:27 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/10/14 10:54:00 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/10/14 12:23:50 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ int	main(int ac, char **av)
 	map.win = mlx_new_window(map.mlx, (map.x_max) * 64,
 			(map.y_max) * 64, "so_long");
 	draw_map(&map);
-	//mlx_hook(map.win, 17, 0, ft_exit_game, &map); //no hace falta porque ya esta metido en la siguiente funcion
 	mlx_key_hook(map.win, key_hook, &map);
 	mlx_loop(map.mlx);
 	return (0);

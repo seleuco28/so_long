@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:20:15 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/10/13 19:22:10 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/10/14 12:19:34 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@
 typedef struct s_game
 {
 	char			**map;
-	char			**map_copy; //checkear si hace falta map_copy
+	char			**map_copy;
 	unsigned long	y_max;
 	unsigned long	x_max;
 	int				player_num;
 	int				player_x;
 	int				player_y;
 	int				coin;
-	int				coin_copy; //NO SE PUEDE QUITAR (explicacion en counts )
+	int				coin_copy;
 	int				movements;
 	int				exit;
 	void			*mlx;

@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/alvarovelazquez/Desktop/so_long/src",
-      "program": "/Users/alvarovelazquez/Desktop/so_long/src/build/Debug/outDebug"
+      "cwd": "/Users/alvarovelazquez/Desktop/so_long/src/bonus",
+      "program": "/Users/alvarovelazquez/Desktop/so_long/src/bonus/build/Debug/outDebug"
     }
   ]
 }

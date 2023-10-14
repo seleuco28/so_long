@@ -6,7 +6,7 @@
 #    By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/01 13:47:33 by alvelazq          #+#    #+#              #
-#    Updated: 2023/09/11 14:12:16 by alvelazq         ###   ########.fr        #
+#    Updated: 2023/10/14 12:34:17 by alvelazq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,12 +30,12 @@ FUNCTIONS_DIR = functions/
 FUNCTIONS 			=	$(addprefix $(FUNCTIONS_DIR), $(FUNCTIONS_SOURCES))
 FUNCTIONS_OBJ		=	$(FUNCTIONS:.c=.o)
 
-SRC_SOURCES			= main.c utils.c map_creation_and_checks.c check_path.c exit_game.c moves.c key_detection.c counts.c
+SRC_SOURCES			= main.c utils.c map_creation_and_checks.c check_path.c moves.c key_detection.c counts.c
 SRC_DIR				= src/
 SRC					= $(addprefix $(SRC_DIR), $(SRC_SOURCES))
 SRC_OBJ				= $(SRC:.c=.o)
 
-SRC_SOURCES_BONUS	= main_bonus.c utils_bonus.c map_creation_and_checks_bonus.c check_path_bonus.c exit_game_bonus.c moves_bonus.c key_detection_bonus.c counts_bonus.c
+SRC_SOURCES_BONUS	= main_bonus.c utils_bonus.c map_creation_and_checks_bonus.c check_path_bonus.c moves_bonus.c key_detection_bonus.c counts_bonus.c
 SRC_DIR_BONUS		= src/bonus/
 SRC_BONUS			= $(addprefix $(SRC_DIR_BONUS), $(SRC_SOURCES_BONUS))
 SRC_OBJ_BONUS		= $(SRC_BONUS:.c=.o)
