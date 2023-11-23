@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:09:27 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/10/19 11:07:19 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:48:22 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 void	ft_draw(t_game *map, char *path, int x, int y)
 {
 	map->img = mlx_xpm_file_to_image(map->mlx, path, &map->img_w, &map->img_h);
+	if (!map->img) //protegido lo del relative path, pero no se comprobarlo!!
+	{
+		ft_putstr("ERROR: Relative path protected\n");
+		exit(0);
+	}
 	mlx_put_image_to_window(map->mlx, map->win, map->img, (x * 64), (y * 64));
 }
 
@@ -53,6 +58,8 @@ int	main(int ac, char **av)
 {
 	t_game	map;
 
+	//atexit(leaks);
+
 	ft_check_args(ac, av[1]);
 	ft_map_creation(av[1], &map);
 	ft_check_valid_chars(&map);
@@ -60,6 +67,7 @@ int	main(int ac, char **av)
 	ft_count_players(&map);
 	ft_count_exit(&map);
 	ft_check_if_rect(&map);
+	ft_check_path_pec_excepction(&map, map.player_y, map.player_x);
 	ft_check_path(&map, map.player_y, map.player_x);
 	ft_coin_exit_checker(&map);
 	ft_free_map_principal(&map);

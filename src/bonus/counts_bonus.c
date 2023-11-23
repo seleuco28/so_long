@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 16:57:37 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/10/13 19:05:36 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/11/23 20:22:21 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,10 +109,5 @@ void	ft_count_enemies(t_game *map)
 			x++;
 		}
 		y++;
-	}
-	if (map->enemy != 1)
-	{
-		ft_putstr("ERROR: There must be at least one enemy.\n");
-		exit(0);
 	}
 }

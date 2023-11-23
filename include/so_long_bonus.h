@@ -6,7 +6,7 @@
 /*   By: alvelazq <alvelazq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:20:15 by alvelazq          #+#    #+#             */
-/*   Updated: 2023/10/14 12:21:22 by alvelazq         ###   ########.fr       */
+/*   Updated: 2023/11/23 21:51:43 by alvelazq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	ft_check_args(int ac, char *av);
 void	ft_map_creation(char *av, t_game *map);
 int		ft_check_valid_chars(t_game *map);
 void	ft_check_if_rect(t_game *map);
+void	ft_check_path_pec_excepction(t_game *map, int y, int x);
 void	ft_check_path(t_game *map, int y, int x);
 void	ft_path_free_and_error_copy(t_game *map);
 void	ft_free_map_principal(t_game *map);
